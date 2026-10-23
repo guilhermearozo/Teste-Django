@@ -1,7 +1,13 @@
 from django.shortcuts import render
 import requests
+from .models import Movie
+from django.http import JsonResponse
+import json
+import os
+
 
 # Create your views here.
+
 def home(request):
     response = requests.get("https://omdbapi.com/?apikey=38b4b85b&s=Batman&type=movie")
     results_json = response.json()
@@ -10,3 +16,7 @@ def home(request):
         "movies": movies
     }
     return render(request, 'index.html', context)
+
+def home2(request):
+    movies = Movie.objects.all()
+    return render(request, "home.html", {"movies": movies})
