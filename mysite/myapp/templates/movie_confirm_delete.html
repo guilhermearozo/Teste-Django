@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deletar filme | Lumière</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="header">
+        <span>Lumière</span>
+        <a class="button button-header" href="{% url 'movie_list' %}">Voltar ao catálogo</a>
+    </div>
+    <main class="form-container">
+        <h1>Deletar filme</h1>
+        <p>Tem certeza de que deseja deletar “{{ movie.title }}”?</p>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-actions">
+                <button class="button button-danger" type="submit">Sim, deletar</button>
+                <a class="button button-secondary" href="{% url 'movie_list' %}">Cancelar</a>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

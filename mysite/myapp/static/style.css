@@ -1,29 +1,136 @@
 body {
-    margin: 0px;
+    margin: 0;
     font-family: "Space Grotesk", ui-sans-serif, system-ui;
+    color: #17172a;
 }
 
 .header {
     background-color: #090820;
-    padding: 5px 10px;
+    padding: 12px 20px;
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
+.header .button-header {
+    margin-left: auto;
+}
+
 .header span {
-    margin: 0px;
     color: white;
     font-weight: bold;
 }
 
 .catalog {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     flex-wrap: wrap;
+    gap: 20px;
+    padding: 24px;
 }
 
 .card {
-    border: 2px solid black;
+    border: 1px solid #d5d5df;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 18rem;
 }
 
+.card-img-top {
+    background: #f0f0f4;
+    height: 260px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.card-content {
+    flex: 1;
+    padding: 0 16px;
+}
+
+.card-content h5 {
+    font-size: 1.1rem;
+    margin: 16px 0 8px;
+}
+
+.card-actions,
+.form-actions {
+    display: flex;
+    gap: 10px;
+    padding: 16px;
+}
+
+.button {
+    background: #302e81;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font: inherit;
+    padding: 9px 14px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.button:hover {
+    background: #22205f;
+}
+
+.button-danger {
+    background: #a32636;
+}
+
+.button-danger:hover {
+    background: #7d1d2a;
+}
+
+.button-secondary {
+    background: #e8e8ee;
+    color: #17172a;
+}
+
+.button-secondary:hover {
+    background: #d7d7e0;
+}
+
+.empty-state {
+    padding: 24px 0;
+    width: 100%;
+}
+
+.form-container {
+    margin: 32px auto;
+    max-width: 600px;
+    padding: 0 20px;
+}
+
+.form-container input,
+.form-container textarea {
+    box-sizing: border-box;
+    display: block;
+    font: inherit;
+    margin-top: 6px;
+    padding: 9px;
+    width: 100%;
+}
+
+.form-container textarea {
+    resize: vertical;
+}
+
+.form-container .form-actions {
+    padding-left: 0;
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 100%;
+    }
+
+    .catalog {
+        padding: 16px;
+    }
+}
